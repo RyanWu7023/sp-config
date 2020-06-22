@@ -13,13 +13,18 @@ eureka:
 zuul:
   retryable: true
 
-
+# 转发规则
+# 默认规则：从eureka注册中心获取注册表，按注册表实现默认配置
+#routes:
+  # item-service: /item-service/**
+  # user-service: /user-service/**
+  # order-service: /order-service/**
+    
 ribbon:
   ConnectTimeout: 1000
   ReadTimeout: 1000
   MaxAutoRetriesNextServer: 1
   MaxAutoRetries: 1
-
   
 hystrix:
   command:
@@ -30,9 +35,10 @@ hystrix:
             timeoutInMilliseconds: 500
             
             
-management:
-  endpoints:
-    web:
+management: 
+  endpoints: 
+    web: 
       exposure:
         include: hystrix.stream
-            
+
+    
