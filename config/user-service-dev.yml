@@ -12,7 +12,7 @@ spring:
   zipkin:
     sender:
       type: rabbit
-server:
+server: 
   port: 8101
   
 sp:
